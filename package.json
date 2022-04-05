@@ -1,0 +1,28 @@
+{
+  "name": "landing",
+  "version": "1.0.0",
+  "description": "this is a landing page for about football match,MANCity vs Liverpool this is simple landing page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peymanahmadian/landing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/peymanahmadian/landing/issues"
+  },
+  "homepage": "https://github.com/peymanahmadian/landing#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  },
+  "dependencies": {
+    "del": "^6.0.0",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.49.11"
+  }
+}
