@@ -21,6 +21,7 @@
     "gulp": "^4.0.2"
   },
   "dependencies": {
+    "animate.css": "^4.1.1",
     "del": "^6.0.0",
     "gulp-sass": "^5.1.0",
     "sass": "^1.49.11"

@@ -1,7 +1,59 @@
+//import font from google
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+.background{
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100vw;
+    height: 100vh;
+    filter: blur(10px) brightness(1.6);
+}
+h1{
+    font-size: 56px;
+    text-align: center;
+    margin: 0;
+    padding:6px
+
+}
+h2{
+    font-size: 36px;
+    text-align: center;
+    margin: 0;
+
+}
+.text{
+    position: absolute;
+    top:4px;
+    left: 0;
+    font-family:'Staatliches', cursive; 
+    color:white;
+    font-weight: 100;
+}
+.vs{
+    position: absolute;
+    font-family: 'Staatliches', cursive;
+    font-size: 66px;
+    color:white;
+    font-weight: 800;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    span{
+        padding: 2px;
+    }
+ 
+    
+}
 body{
     padding:0;
     margin:0;
     .banner{
+        .title{
+            font-family: 'Staatliches', cursive;
+            color:white;
+        }
+        display: flex;
         width: 1024px;
         height: 80vh;
         border-radius: 8px;
@@ -13,14 +65,71 @@ body{
         background: url("../images/liverpoolwallpaper.jpg"),url("../images/mancitywallpapaer.jpg");
         background-repeat: no-repeat;
         background-position: left,right;
+        box-shadow: 0 0px 13px #000000;
         background-size: 50% , 50%;
-        .liverpool_logo{
+        .image{
             position: absolute;
-            left:20%
+            left: 50%;
+            top:50%;
+            transform: translate(-50%,-50%);
         }
-        .manchester_logo{
-            position:absolute;
-            right: 20%;
+        .side{
+            width: 50%;
+            position: relative;
+            &.liverpool_logo{
+                .image{
+                    top:calc(50% - 14px);
+                }
+            }
+           
         }
+        
     }
 }
+.footer{
+    text-align: center;
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+}
+//button
+/* From cssbuttons.io by @nikk7007 */
+button {
+    cursor: pointer;
+    padding: 0.8em 1.8em;
+    border: 2px solid white;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family:'Staatliches', cursive; 
+    font-size: 24px;
+    transition: .3s;
+    z-index: 1;
+    color: white;
+   }
+   
+   button::before {
+    content: '';
+    width: 0;
+    height: 390%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: white;
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+   }
+   
+   button:hover::before {
+    width: 105%;
+   }
+   
+   button:hover {
+    color: #111;
+   }
+   
