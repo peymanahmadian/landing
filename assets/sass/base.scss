@@ -1,14 +1,25 @@
 //import font from google
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
-.background{
-    background-image: url("../images/background.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    width: 100vw;
-    height: 100vh;
-    filter: blur(10px) brightness(1.6);
+//responsvie mixin
+@mixin responsive($breakpoint){
+    @if $breakpoint=="tablet"{
+        @media only screen and (max-width: 600px) {
+            @content;
+        }
+    }
+    @if $breakpoint=="mobile"{
+        @media only screen and (max-width: 480px) {
+            @content;
+          }
+    } 
 }
+//init style
+body{
+    padding:0;
+    margin:0;
+}
+//base element style
+
 h1{
     font-size: 56px;
     text-align: center;
@@ -22,78 +33,6 @@ h2{
     margin: 0;
 
 }
-.text{
-    position: absolute;
-    top:4px;
-    left: 0;
-    font-family:'Staatliches', cursive; 
-    color:white;
-    font-weight: 100;
-}
-.vs{
-    position: absolute;
-    font-family: 'Staatliches', cursive;
-    font-size: 66px;
-    color:white;
-    font-weight: 800;
-    left: 50%;
-    top:50%;
-    transform: translate(-50%,-50%);
-    span{
-        padding: 2px;
-    }
- 
-    
-}
-body{
-    padding:0;
-    margin:0;
-    .banner{
-        .title{
-            font-family: 'Staatliches', cursive;
-            color:white;
-        }
-        display: flex;
-        width: 1024px;
-        height: 80vh;
-        border-radius: 8px;
-        position: absolute;
-        left: 50%;
-        top:50%;
-        transform: translate(-50%,-50%);
-        box-shadow: 0 0 4px gray;
-        background: url("../images/liverpoolwallpaper.jpg"),url("../images/mancitywallpapaer.jpg");
-        background-repeat: no-repeat;
-        background-position: left,right;
-        box-shadow: 0 0px 13px #000000;
-        background-size: 50% , 50%;
-        .image{
-            position: absolute;
-            left: 50%;
-            top:50%;
-            transform: translate(-50%,-50%);
-        }
-        .side{
-            width: 50%;
-            position: relative;
-            &.liverpool_logo{
-                .image{
-                    top:calc(50% - 14px);
-                }
-            }
-           
-        }
-        
-    }
-}
-.footer{
-    text-align: center;
-    position: absolute;
-    bottom: 30px;
-    width: 100%;
-}
-//button
-/* From cssbuttons.io by @nikk7007 */
 button {
     cursor: pointer;
     padding: 0.8em 1.8em;
@@ -109,27 +48,113 @@ button {
     transition: .3s;
     z-index: 1;
     color: white;
-   }
+}
    
-   button::before {
-    content: '';
-    width: 0;
-    height: 390%;
+button::before {
+content: '';
+width: 0;
+height: 390%;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%) rotate(45deg);
+background: white;
+transition: .5s ease;
+display: block;
+z-index: -1;
+}
+   
+button:hover::before {
+width: 105%;
+}
+   
+button:hover {
+color: #111;
+}
+//style to main element
+.background{
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100vw;
+    height: 100vh;
+    filter: blur(10px) brightness(1.6);
+}
+.text{
+    z-index: 99999;
     position: absolute;
-    top: 50%;
+    top:4px;
+    left: 0;
+    font-family:'Staatliches', cursive; 
+    color:white;
+    font-weight: 100;
+}
+.vs{
+    z-index:9999;
+    position: absolute;
+    font-family: 'Staatliches', cursive;
+    font-size: 66px;
+    color:white;
+    font-weight: 800;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
-    background: white;
-    transition: .5s ease;
-    display: block;
-    z-index: -1;
-   }
-   
-   button:hover::before {
-    width: 105%;
-   }
-   
-   button:hover {
-    color: #111;
-   }
+    top:50%;
+    transform: translate(-50%,-50%);
+    span{
+        padding: 2px;
+    }
+ 
+    
+}
+.banner{
+    .title{
+        font-family: 'Staatliches', cursive;
+        color:white;
+    }
+    @include responsive("tablet"){
+        display: block;
+    }
+    display: flex;
+    width: 1024px;
+    height: 80vh;
+    border-radius: 8px;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0 0 4px gray;
+    .image{
+        position: absolute;
+        left: 50%;
+        top:50%;
+        transform: translate(-50%,-50%);
+    }
+    .side{
+        background-repeat: no-repeat;
+        background-position: left,right;
+        box-shadow: 0 0px 13px #000000;
+        background-size:100%;
+        width: 50%;
+        position: relative;
+        &.liverpool_logo{
+            .image{
+                top:calc(50% - 14px);
+            }
+            background-image: url("../images/liverpoolwallpaper.jpg");
+        }
+        &.manchester_logo{
+            background-image:url("../images/mancitywallpapaer.jpg");
+        }
+        
+    }
+        
+}
+.footer{
+    text-align: center;
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+}
+
+
    
