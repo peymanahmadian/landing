@@ -69,6 +69,12 @@ button:hover {
   width: 100vw;
   height: 100vh;
   filter: blur(10px) brightness(1.6);
+  /* Portrait */
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .background {
+    display: none;
+  }
 }
 
 .text {
@@ -102,6 +108,7 @@ button:hover {
 }
 
 .banner {
+  /* Portrait */
   display: flex;
   width: 1024px;
   max-width: 100%;
@@ -116,6 +123,11 @@ button:hover {
 .banner .title {
   font-family: "Staatliches", cursive;
   color: white;
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .banner {
+    position: fixed;
+  }
 }
 @media only screen and (max-width: 600px) {
   .banner {

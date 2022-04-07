@@ -12,6 +12,16 @@
             @content;
           }
     } 
+    @if $breakpoint=="iphone"{
+        /* Portrait */
+        @media only screen 
+        and (min-device-width: 375px) 
+        and (max-device-width: 667px) 
+        and (-webkit-min-device-pixel-ratio: 2)
+        and (orientation: portrait) { 
+            @content;
+        }
+    }
 }
 //init style
 body{
@@ -83,6 +93,9 @@ color: #111;
     width: 100vw;
     height: 100vh;
     filter: blur(10px) brightness(1.6);
+    @include responsive("iphone"){
+        display: none;
+    }
 }
 .text{
     z-index: 99999;
@@ -116,9 +129,13 @@ color: #111;
     
 }
 .banner{
+
     .title{
         font-family: 'Staatliches', cursive;
         color:white;
+    }
+    @include responsive("iphone"){
+        position: fixed;
     }
     @include responsive("tablet"){
         display: block;
