@@ -137,10 +137,11 @@ color: #111;
     @include responsive("iphone"){
         position: fixed;
         overflow: hidden;
+        height: 100%;
     }
     @include responsive("tablet"){
         display: block;
-        height: 100vh;
+        height: 100%;
         width: 100%;
 
     }
