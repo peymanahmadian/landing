@@ -138,7 +138,6 @@ button:hover {
 @media only screen and (max-width: 480px) {
   .banner {
     position: fixed;
-    overflow: hidden;
     height: 100%;
   }
 }
