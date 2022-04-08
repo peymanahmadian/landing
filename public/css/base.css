@@ -172,7 +172,7 @@ button:hover {
 @media only screen and (max-width: 600px) {
   .banner .side {
     display: block;
-    height: 50vh;
+    height: 50%;
     width: 100%;
   }
 }
