@@ -170,7 +170,9 @@ color: #111;
         top:50%;
         transform: translate(-50%,-50%);
         text-align: center;
-        @include responsive("mobile"){
+        @include responsive("tablet"){
+            display: flex;
+            align-items: center;
             img{
                 height: 115px;
             }
@@ -195,9 +197,15 @@ color: #111;
 
         &.liverpool_logo{
             .image{
-                top:calc(50% - 14px);
+                top:50%;
                 @include responsive("tablet"){
-                    top:calc(50% + 16px);
+                    top:50%
+                }
+                @include responsive("mobile"){
+                    img{
+                        margin-right: 6px;
+
+                    }
                 }
 
             }
@@ -206,13 +214,13 @@ color: #111;
         &.manchester_logo{
             @include responsive("tablet"){
                 .image{
-                    top:calc(50% - 36px);
+                    top:50%
 
                 }
             }
             @include responsive("mobile"){
                 .image{
-                    top:calc(50% - 16px);
+                    top:50%
                 }
             }
             background-image:url("../images/mancitywallpapaer.jpg");

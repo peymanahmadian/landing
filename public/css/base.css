@@ -155,7 +155,11 @@ button:hover {
   transform: translate(-50%, -50%);
   text-align: center;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 600px) {
+  .banner .image {
+    display: flex;
+    align-items: center;
+  }
   .banner .image img {
     height: 115px;
   }
@@ -180,11 +184,16 @@ button:hover {
   background-image: url("../images/liverpoolwallpaper.jpg");
 }
 .banner .side.liverpool_logo .image {
-  top: calc(50% - 14px);
+  top: 50%;
 }
 @media only screen and (max-width: 600px) {
   .banner .side.liverpool_logo .image {
-    top: calc(50% + 16px);
+    top: 50%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .banner .side.liverpool_logo .image img {
+    margin-right: 6px;
   }
 }
 .banner .side.manchester_logo {
@@ -192,12 +201,12 @@ button:hover {
 }
 @media only screen and (max-width: 600px) {
   .banner .side.manchester_logo .image {
-    top: calc(50% - 36px);
+    top: 50%;
   }
 }
 @media only screen and (max-width: 480px) {
   .banner .side.manchester_logo .image {
-    top: calc(50% - 16px);
+    top: 50%;
   }
 }
 
