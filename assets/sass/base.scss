@@ -136,6 +136,7 @@ color: #111;
     }
     @include responsive("iphone"){
         position: fixed;
+        overflow: hidden;
     }
     @include responsive("tablet"){
         display: block;
