@@ -110,6 +110,8 @@ color: #111;
     font-family:'Staatliches', cursive; 
     color:white;
     font-weight: 100;
+    padding: 12px;
+
 }
 .vs{
     @include responsive("mobile"){
@@ -138,8 +140,11 @@ color: #111;
     .title{
         font-family: 'Staatliches', cursive;
         color:white;
+        @include responsive("mobile"){
+            font-size: 1.8rem;
+        }
     }
-    @include responsive("iphone"){
+    @include responsive("mobile"){
         position: fixed;
         overflow: hidden;
         height: 100%;

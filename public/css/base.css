@@ -91,6 +91,7 @@ button:hover {
   font-family: "Staatliches", cursive;
   color: white;
   font-weight: 100;
+  padding: 12px;
 }
 
 .vs {
@@ -114,7 +115,6 @@ button:hover {
 }
 
 .banner {
-  /* Portrait */
   display: flex;
   width: 1024px;
   max-width: 100%;
@@ -130,7 +130,12 @@ button:hover {
   font-family: "Staatliches", cursive;
   color: white;
 }
-@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+@media only screen and (max-width: 480px) {
+  .banner .title {
+    font-size: 1.8rem;
+  }
+}
+@media only screen and (max-width: 480px) {
   .banner {
     position: fixed;
     overflow: hidden;
